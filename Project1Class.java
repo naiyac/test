@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.math.BigDecimal;
 
 public class Project1Class {
     public static void main (String [] args){
@@ -111,9 +112,12 @@ public class Project1Class {
         double testQuizAvg = (quizOneGrade+quizTwoGrade+quizThreeGrade+quizFourGrade+quizFiveGrade+quizSixGrade+quizSevenGrade+quizEightGrade+quizNineGrade+quizTenGrade+quizElevenGrade+midtermExamGrade+finalExamGrade)/13;
 
         //calculates final grade
-        double finalGradeAvg = (assignmentAvg*.30)+(projectAvg*.40)+(testQuizAvg*.20)+(participGrade*.10);
+        double finalGradeAvg = (assignmentAvg*.30+projectAvg*.40+testQuizAvg*.20+participGrade*.10);
 
-        System.out.println("Your final grade in COSC 251 is: "+ finalGradeAvg+".");
+        //rounds to two decimal places
+        double roundOff = Math.round(finalGradeAvg * 100.0) / 100.0;
+
+        System.out.println("Your final grade in COSC 251 is: "+ roundOff+".");
 
 
 
